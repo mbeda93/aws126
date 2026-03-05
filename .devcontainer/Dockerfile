@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 RUN usermod -aG docker vscode
 
 # AWS CLI && SAM CLI
-RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip \
+RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o /tmp/awscliv2.zip \
     && unzip /tmp/awscliv2.zip -d /tmp \
     && /tmp/aws/install \
     && rm -rf /tmp/aws /tmp/awscliv2.zip \
-    && curl -L https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip -o aws-sam-cli.zip \
+    && curl -L https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-arm64.zip -o aws-sam-cli.zip \
     && unzip aws-sam-cli.zip -d sam-installation \
     && ./sam-installation/install \
     && rm -rf aws-sam-cli.zip sam-installation
