@@ -43,7 +43,6 @@ resource "aws_dynamodb_table" "photos_table" {
     projection_type = "ALL"
   }
 
-  # Global Secondary Index: feed-index
   global_secondary_index {
     name            = "feed-index"
     hash_key        = "feed_key"
